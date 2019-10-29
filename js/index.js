@@ -1,5 +1,13 @@
-function deleteItem(event){
+var rowsNumber = 2;
 
+function deleteItem(event){
+  let parent = event.currentTarget.parentNode.parentNode;
+  console.log(parent);
+
+  let grandParent = parent.parentNode;
+  grandParent.removeChild(parent);
+
+  rowsNumber--;
 }
 
 function getPriceByProduct(itemNode){
@@ -20,7 +28,6 @@ function getTotalPrice() {
     let priceClean = parseFloat(price.innerHTML.split('$').join(''));
     totalPrice += priceClean;
   });
-  console.log(totalPrice);
   document.getElementById('total-price').innerHTML = totalPrice + ' $';
   
 }
@@ -41,11 +48,29 @@ function createItemNode(dataType, itemData){
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+function createNewItemRow(){
+  let wrapper = document.createElement('div');
+  wrapper.setAttribute('class', 'wrapper');
+  let newName = document.getElementById('new-product-name').value;
+  let newPrice = document.getElementById('new-product-price').value;
+  let newNameField = document.createElement('span');
+  newNameField.innerHTML = newName;
+  let newPriceField = document.createElement('span');
+  newPriceField.innerHTML = newPrice;
+  wrapper.appendChild(newNameField);
+  wrapper.appendChild(newPriceField);
+  document.getElementById('big-container').appendChild(wrapper);
+  console.log(newName,newPrice);
+  console.log(wrapper);
+
+
 
 }
 
 function createNewItem(){
+  rowsNumber++;
+  createNewItemRow();
+
 
 }
 
@@ -54,7 +79,7 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  var inputFields = document.getElementsByTagName('input');
+  var inputFields = document.getElementsByClassName('input-quantity');
   var inputsArray = [...inputFields];
 
   inputsArray.forEach(input => input.addEventListener('change', (e) => {
@@ -63,13 +88,12 @@ window.onload = function(){
     updatePriceByProduct(price,index);
   }));
 
-  /*calculatePriceButton.onclick = getTotalPrice;
+  
   createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
-  */
 
 
 

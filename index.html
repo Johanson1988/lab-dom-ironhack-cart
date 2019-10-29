@@ -10,52 +10,67 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-  <div class='wrapper'>
-    <div>
-      <span>IronBubble-head</span>
-    </div>
-
-    <div>
-      <span class='row-1'>$25.00</span>
-    </div>
-
-    <div>
-      <label for="quantity"></label>
-      <input type="number" name="quantity" class='row-1'>
-    </div>
-
-    <div>
-      <p class='row-1 price'></p>
-    </div>
-
-    <div>
-      <button class="btn btn-delete">Delete</button>
-    </div>    
-  </div>
-
-  <div class='wrapper'>
-    <div>
-      <span>IronShirt</span>
-    </div>
-
-    <div>
-      <span class='row-2'>$15.00</span>
-    </div>
-
-    <div>
-      <label for="quantity"></label>
-      <input type="number" name="quantity" class='row-2'>
-    </div>
-
-    <div>
-      <p class='row-2 price'></p>
-    </div>
-
-    <div>
-      <button class="btn btn-delete">Delete</button>
-    </div>    
-  </div>
   
+  <div id='big-container'>
+    <div class='wrapper'>
+        <div>
+          <span>IronBubble-head</span>
+        </div>
+    
+        <div>
+          <span class='row-1'>$25.00</span>
+        </div>
+    
+        <div>
+          <label for="quantity"></label>
+          <input type="number" name="quantity" class='row-1 input-quantity'>
+        </div>
+    
+        <div>
+          <p class='row-1 price'></p>
+        </div>
+    
+        <div>
+          <button class="btn btn-delete">Delete</button>
+        </div>    
+      </div>
+    
+      <div class='wrapper'>
+        <div>
+          <span>IronShirt</span>
+        </div>
+    
+        <div>
+          <span class='row-2'>$15.00</span>
+        </div>
+    
+        <div>
+          <label for="quantity"></label>
+          <input type="number" name="quantity" class='row-2 input-quantity'>
+        </div>
+    
+        <div>
+          <p class='row-2 price'></p>
+        </div>
+    
+        <div>
+          <button class="btn btn-delete">Delete</button>
+        </div>    
+      </div>
+
+  </div>
+
+  <div class='wrapper'>
+    <div>
+      <input type="text" id='new-product-name'>
+    </div>
+    <div>
+      <input type="text" id='new-product-price'>
+    </div>
+    <div>
+      <button id='new-item-create'>Create</button>
+    </div>
+  </div>
 
   <div id="complete-button-container">
     <button class="btn btn-success" id='calc-prices-button'>Calculate Price</button>
