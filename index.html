@@ -9,76 +9,55 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <h1>Ironhack Merchandising Shop</h1>
-  
-  <div id='big-container'>
-    <div class='wrapper'>
-        <div>
-          <span>IronBubble-head</span>
-        </div>
-    
-        <div>
-          <span class='row-1'>$25.00</span>
-        </div>
-    
-        <div>
-          <label for="quantity"></label>
-          <input type="number" name="quantity" class='row-1 input-quantity'>
-        </div>
-    
-        <div>
-          <p class='row-1 price'></p>
-        </div>
-    
-        <div>
-          <button class="btn btn-delete">Delete</button>
-        </div>    
+  <main>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div class="product-wrapper" id='item-1'>
+      <span class='product-name'>IronBubble</span>
+      <p>
+        <span>$</span><span class='unit-cost'>25.00</span>
+      </p>
+      <div class='quantity quantity-wrapper'>
+        <form>
+          <label for="quantity">Quantity</label>
+          <input type="number" name='quantity'>
+        </form>
       </div>
-    
-      <div class='wrapper'>
-        <div>
-          <span>IronShirt</span>
-        </div>
-    
-        <div>
-          <span class='row-2'>$15.00</span>
-        </div>
-    
-        <div>
-          <label for="quantity"></label>
-          <input type="number" name="quantity" class='row-2 input-quantity'>
-        </div>
-    
-        <div>
-          <p class='row-2 price'></p>
-        </div>
-    
-        <div>
-          <button class="btn btn-delete">Delete</button>
-        </div>    
+      <div class='price-wrapper'>
+        <span class='total-price'></span>
       </div>
-
-  </div>
-
-  <div class='wrapper'>
-    <div>
-      <input type="text" id='new-product-name'>
+      <div class='btn-wrapper'>
+        <button class='btn-delete btn' id='delete-1'>Delete</button>
+      </div>
     </div>
-    <div>
-      <input type="text" id='new-product-price'>
+    <div class="product-wrapper" id='item-2'>
+      <span class='product-name'>IronBike</span>
+      <p>
+        <span>$</span><span class='unit-cost'>130.00</span>
+      </p>
+      <div class='quantity quantity-wrapper'>
+        <form>
+          <label for="quantity">Quantity</label>
+          <input type="number" name='quantity'>
+        </form>
+      </div>
+      <div class='price-wrapper'>
+        <span class='total-price'></span>
+      </div>
+      <div class='btn-wrapper'>
+        <button class='btn-delete btn' id='delete-2'>Delete</button>
+      </div>
     </div>
-    <div>
-      <button id='new-item-create'>Create</button>
-    </div>
-  </div>
-
-  <div id="complete-button-container">
-    <button class="btn btn-success" id='calc-prices-button'>Calculate Price</button>
-  </div>
-
-  <div>
-    <h2 id='total-price'></h2>
-  </div>
-    <script type="text/javascript" src="./js/index.js"></script>
+  </main>
+  <section>
+    <form id='create-new-product'>
+      <input id='new-item-name' type="text" placeholder="New Product Name">
+      <input id='new-item-price' type="number" placeholder="New product price">
+      <button class="btn btn-add" id="new-item-create">Add New Product</button>
+    </form>
+      <button class="btn-success btn" id='calc-prices-button'>Calculate Prices</button>
+      <h2>Total Price: <span id="total-of-all">$0</span></h2>
+  </section>
+  <script type="text/javascript" src="js/uniqueid.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

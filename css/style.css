@@ -36,23 +36,23 @@ input {
     border-color: #CF000F;
 }
 
+.btn-add {
+  color: blue;
+  background-color: #CF000F;
+  border-color: #CF000F;
+}
+
 .quantity {
   margin: 0 5px;
 }
-.wrapper {
+.product-wrapper {
   display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  width: 100vw;
+  justify-content: space-around;
 }
-h1 {
-  text-align: center;
+
+main {
+  margin-bottom: 50px;
+  padding: 20px;
 }
-#complete-button-container {
-  display: flex;
-  justify-content: center;
-}
-#total-price {
-  text-align: center;
-  font-size:5em;
-}
+
