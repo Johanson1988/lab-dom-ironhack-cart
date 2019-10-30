@@ -1,9 +1,9 @@
 function deleteItem(event){
   
-  console.log(event.currentTarget);
+  debugger;
   var clickedButton = event.currentTarget;
-  var itemId = clickedButton.id.split('-')[1];
-  var productToDelete = document.querySelector('#item-' + itemId);
+  var itemId = clickedButton.id.split('_')[1];
+  var productToDelete = document.querySelector('#' + itemId);
   productToDelete.remove();
   getTotalPrice();
 }
@@ -55,11 +55,11 @@ function createNewItemRow(itemName, itemUnitPrice){
 
   var main = document.querySelector('main');
 
-  var nextItemIndex = main.childElementCount;
+  var uid = generateUniqueId();
 
   var divNode   = document.createElement('div');
   divNode.setAttribute('class','product-wrapper');
-  divNode.setAttribute('id',`item-${nextItemIndex}`);
+  divNode.setAttribute('id',`${uid}`);
 
   
   
@@ -79,7 +79,7 @@ function createNewItemRow(itemName, itemUnitPrice){
           <span class='total-price'></span>
         </div>
         <div class='btn-wrapper'>
-          <button class='btn-delete btn' id='delete-${nextItemIndex}'>Delete</button>
+          <button class='btn-delete btn' id='delete_${uid}'>Delete</button>
         </div>
   `;
 
